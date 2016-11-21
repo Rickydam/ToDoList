@@ -1,0 +1,33 @@
+<html>
+  <header>
+    <title> ToDoList </title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+  </header>
+  <body ng-app="myApp">
+    <div style="margin-left:50px;margin-top:50px" ng-controller="MyController">
+      <input type="text" ng-model="newItem">
+      <input type="submit" value="Add to list" ng-click="add()">
+      <font face="Source Sans Pro">
+        <h1> Things to do </h1>
+        <ul>
+          <li ng-repeat="item in list"> {{item}} </li>
+        </ul>
+      </font>
+    </div><!-- container-fluid -->
+  </body>
+</html>
+
+<script type="text/javascript">
+  var app = angular.module('myApp', []);
+
+  function MyController($scope) {
+    $scope.list = [
+      "Clean room",
+      "Wash dishes"
+    ];
+    $scope.add = function() {
+      $scope.list.push($scope.newItem);
+    }
+  }
+</script>
