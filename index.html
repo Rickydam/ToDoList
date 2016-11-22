@@ -23,6 +23,7 @@
     $scope.list = [];
     $scope.add = function(e) {
         $scope.list.push($scope.newItem);
+        var input = document.getElementById("theTextField");
         input.value = null;
         input.focus();
     }
