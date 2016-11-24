@@ -10,5 +10,5 @@ app.get("/", function(req, res) {
 });
 
 app.listen(port, function() {
-  console.log("App running");
+  console.log("App running on https://localhost:8080/");
 });

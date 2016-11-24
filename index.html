@@ -4,36 +4,16 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
   </header>
-  <body ng-app="myApp">
-    <div style="margin-left:50px;margin-top:50px" ng-controller="MyController">
+  <body ng-app="theToDoListApp">
+    <div style="margin-left:50px;margin-top:50px" id="theDiv" ng-controller="MyController" onkeypress="checkEnter(event)">
       <font face="Source Sans Pro">
         <input type="text" ng-model="newItem" id="theTextField">
-        <input type="submit" value="Add to list" ng-click="add()">
+        <input type="submit" value="Add to list" ng-click="add()" ng-required="true">
         <h1> Things to do </h1>
         <ul><li ng-repeat="item in list"> {{item}} </ul>
       </font>
     </div> <!-- container-fluid -->
   </body>
+  <script src="input.js"></script>
+  <script src="itemlist.js"></script>
 </html>
-
-<script type="text/javascript">
-  var app = angular.module('myApp', []);
-
-  function MyController($scope) {
-    $scope.list = [];
-    $scope.add = function(e) {
-        $scope.list.push($scope.newItem);
-        var input = document.getElementById("theTextField");
-        input.value = null;
-        input.focus();
-    }
-  }
-
-  /**
-  function checkEnter(e) {
-    if(e.keyCode == 13 || e.keyCode == 10) {
-    }
-  }
-  */
-
-</script>
