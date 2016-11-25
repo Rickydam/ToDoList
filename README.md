@@ -1,4 +1,4 @@
 # ToDoList
-A ToDoList which uses Angular, Express, Node and Heroku.
+A ToDoList WebApp which makes use of MongoDB, Express, Angular and Node. 
 
 # https://afternoon-fortress.herokuapp.com/
