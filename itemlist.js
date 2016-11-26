@@ -1,12 +1,14 @@
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/test");
 
+var Car = mongoose.model("Cat", {name:String});
 
-/**
-'use strict'; // throws exceptions and errors when unsafe actions are being executed
-
-angular.module('theToDoListApp').controller('MyController', theController);
-
-function theController($http) {
-  const thisController = this;
-  thisController.items = {};
-}
-*/
+var kitty = new Cat ({name:"CaptainFurrz"});
+kitty.save(function(err) {
+  if(err) {
+    console.log(err);
+  }
+  else {
+    console.log("meow");
+  }
+});

@@ -1,12 +1,13 @@
 {
-  "name" : "ToDoList",
-  "version" : "1.0.0",
-  "scripts" : {
-    "start" : "node server.js"
+  "name": "ToDoList",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
   },
-  "dependencies" : {
-    "express" : "4.13.3"
+  "dependencies": {
+    "express": "4.13.3",
+    "mongoose": "^4.7.0"
   },
-  "author" : "Ricky Dam",
-  "license" : "None"
+  "author": "Ricky Dam",
+  "license": "None"
 }
