@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A simple ToDoList Webapp.",
   "author": "Ricky Dam",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.4.3",
     "express": "^4.13.3",
