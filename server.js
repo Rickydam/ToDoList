@@ -4,7 +4,7 @@ var app = express();
 
 // Mongoose set up
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://127.0.0.1:27017/items');
+var db = mongoose.connect('mongodb://heroku_11j5ndg9:41ipkd3dlc5fbpbpfc8pi3vpsq@ds113678.mlab.com:13678/heroku_11j5ndg9');
 mongoose.connection.once('connected', function() {
   console.log("Connected to database: items.");
 });
@@ -59,5 +59,5 @@ app.post('/items', function(req, res) {
 });
 
 // Listen on port 8080
-app.listen(8080)
-console.log("App running on https://localhost:8080/");
+app.listen(8080);
+console.log('App running on port 8080');
