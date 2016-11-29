@@ -1,13 +1,13 @@
 {
   "name": "ToDoList",
   "version": "1.0.0",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "4.13.3",
-    "mongoose": "^4.7.0"
-  },
+  "description": "A simple ToDoList Webapp.",
   "author": "Ricky Dam",
-  "license": "None"
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.3",
+    "method-override": "^2.1.3",
+    "mongoose": "^4.7.0",
+    "morgan": "^1.1.1"
+  }
 }

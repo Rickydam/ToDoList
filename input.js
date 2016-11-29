@@ -1,23 +1,27 @@
-var app = angular.module('myApp', []);
+// Angular
+var app = angular.module('theToDoListApp', []);
 
-function MyController($scope) {
-  $scope.list = [];
-  $scope.add = function() {
-    var input = document.getElementById("theTextField");
-    if(input.value == "") {
-      input.focus();
-    }
-    else {
-      $scope.list.push($scope.newItem);
-      input.value = null;
-      input.focus();
-    }
-    $scope.$apply();
-  }
-}
+function myController($scope, $http) {
+  $scope.formData = {};
 
-function checkEnter(e) {
-  if(e.keyCode==10 || e.keyCode==13) {
-    angular.element(document.getElementById("theDiv")).scope().add();
-  }
+  $http.get('/items')
+    .success(function(data) {
+      $scope.items = data;
+      console.log(data);
+    })
+    .error(function(data) {
+      console.log('Error: ' + data);
+    });
+
+  $scope.createTodo = function() {
+    $http.post('/items', $scope.formData)
+      .success(function(data) {
+        $scope.items = data;
+        $scope.formData = "";
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+      });
+  };
 }

@@ -1,19 +1,19 @@
-<html ng-app>
+<!DOCTYPE html>
+<html ng-app="theToDoListApp">
   <header>
     <title> ToDoList </title>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
   </header>
-  <body ng-app="theToDoListApp">
-    <div style="margin-left:50px;margin-top:50px" id="theDiv" ng-controller="MyController" onkeypress="checkEnter(event)">
+  <body ng-controller="myController">
+    <div style="margin-left:50px;margin-top:50px">
       <font face="Source Sans Pro">
-        <input type="text" ng-model="newItem" id="theTextField">
-        <input type="submit" value="Add to list" ng-click="add()" ng-required="true">
+        <input type="text" ng-model="formData.text">
+        <input type="submit" value="Add to list" ng-click="createTodo()" ng-required="true">
         <h1> Things to do </h1>
-        <ul><li ng-repeat="item in list"> {{item}} </ul>
+        <ul><li ng-repeat="item in items"> {{item.text}} </ul>
       </font>
     </div> <!-- container-fluid -->
   </body>
   <script src="input.js"></script>
-  <script src="itemlist.js"></script>
 </html>
