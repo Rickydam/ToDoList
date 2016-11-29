@@ -58,6 +58,7 @@ app.post('/items', function(req, res) {
   });
 });
 
-// Listen on port 8080
-app.listen(8080);
-console.log('App running on port 8080');
+// Pick a port and run app
+var port = process.env.PORT || 8080;
+app.listen(port);
+console.log('App running');
