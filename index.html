@@ -8,10 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
   </header>
   <body ng-controller="myController">
-    <div style="margin-left:50px;margin-top:50px">
+    <div style="margin-left:50px;margin-top:50px" id="theDiv" onkeypress="checkEnter(event)">
       <font face="Source Sans Pro">
         <div class="col-xs-5">
-          <input class="form-control" ng-model="formData.text" placeholder="Things to do">
+          <input class="form-control" ng-model="formData.text" placeholder="Things to do" id="theTextField">
         </div>
         <button class="btn btn-primary" ng-click="createTodo()"style="margin-left:-10px"> Submit </button>
         <h1 style="margin-left:15px">
@@ -23,10 +23,11 @@
           </b>
         </h1>
         <font size="4">
-          <ul style="margin-left:15px">
-            <li ng-repeat="item in items" style="margin-top:5px">
-              <button class="btn btn-danger" ng-click=deleteTodo(item._id)> X </button> {{item.text}}
-            </li>
+          <ul>
+            <div ng-repeat="item in items" style="margin-top:5px">
+              <button class="btn btn-danger" ng-click=deleteTodo(item._id)> X </button>
+              <li> &nbsp;&nbsp; • {{item.text}} </li>
+            </div>
           </ul>
         </font>
       </font>
