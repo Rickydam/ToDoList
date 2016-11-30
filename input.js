@@ -24,4 +24,16 @@ function myController($scope, $http) {
         console.log('Error: ' + data);
       });
   };
+
+  $scope.deleteTodo = function(id) {
+    $http.delete('/items/' + id)
+      .success(function(data) {
+        $scope.items = data;
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error: ' + data);
+      });
+  };
+  $scope.$apply();
 }
