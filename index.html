@@ -2,19 +2,21 @@
 <html ng-app="theToDoListApp">
   <header>
     <title> ToDoList </title>
+    <link rel="shortcut icon" href="icon.png">
+    <link href="font-awesome.min.css" rel="stylesheet" type="text/css" >
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+    <script src="input.js"></script>
   </header>
   <body ng-controller="myController">
-    <div style="margin-left:50px;margin-top:50px" id="theDiv" onkeypress="checkEnter(event)">
+    <div class="container-fluid" style="margin-left:50px;margin-top:50px" id="theDiv" onkeypress="checkEnter(event)">
       <font face="Source Sans Pro">
         <div class="col-xs-5">
           <input class="form-control" ng-model="formData.text" placeholder="Things to do" id="theTextField">
         </div>
         <button class="btn btn-primary" ng-click="createTodo()"style="margin-left:-10px"> Submit </button>
-        <h1 style="margin-left:15px">
+        <h1 style="margin-left:15px;margin-bottom:20px">
           <b>
             ToDoList by
             <a href="https://github.com/Rickydam"> RickyDam
@@ -22,16 +24,15 @@
             </a>
           </b>
         </h1>
-        <font size="4">
+        <font size="5">
           <ul>
-            <div ng-repeat="item in items" style="margin-top:5px">
+            <div ng-repeat="item in items" style="margin-top:5px;margin-left:-25px">
               <button class="btn btn-danger" ng-click=deleteTodo(item._id)> X </button>
-              <li> &nbsp;&nbsp; • {{item.text}} </li>
+              <li> &nbsp; • {{item.text}} </li>
             </div>
           </ul>
         </font>
       </font>
-    </div> <!-- container-fluid -->
+    </div>
   </body>
-  <script src="input.js"></script>
 </html>

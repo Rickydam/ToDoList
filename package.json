@@ -1,7 +1,7 @@
 {
   "name": "ToDoList",
   "version": "1.0.0",
-  "description": "A simple ToDoList Webapp.",
+  "description": "A Simple ToDoList WebApp.",
   "author": "Ricky Dam",
   "scripts": {
     "start": "node server.js"
