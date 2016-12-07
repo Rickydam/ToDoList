@@ -1,0 +1,39 @@
+<link href="css/source_sans_pro.css" rel='stylesheet' type='text/css'>
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+<link href="css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+<div class="container-fluid" style="margin-left:50px;margin-top:50px" id="theDiv" onkeypress="checkEnter(event)">
+  <font face="Source Sans Pro">
+    <div class="col-xs-5">
+      <input class="form-control" ng-model="formData.text" placeholder="Things to do" id="theTextField">
+    </div>
+    <button class="btn btn-primary" ng-click="createTodo()"style="margin-left:-10px"> Submit </button>
+    <h1 style="margin-left:15px;margin-bottom:20px">
+      <b>
+        ToDoList by
+        <a href="https://github.com/Rickydam"> RickyDam
+          <i class="fa fa-external-link"></i>
+        </a>
+      </b>
+    </h1>
+    <font size="5">
+      <ul>
+        <div ng-repeat="item in items" style="margin-top:5px;margin-left:-25px">
+          <button class="btn btn-danger" ng-click="deleteTodo(item._id)"> X </button>
+          <li> &nbsp; • {{item.text}} </li>
+        </div>
+      </ul>
+    </font>
+  </font>
+</div>
+
+<script type="text/javascript">
+  function checkEnter(e) {
+    if(e.keyCode==13) {
+      angular.element(document.getElementById("theDiv")).scope().createTodo();
+    }
+  }
+</script>
+
+<script href="js/jquery.min.js"></script>
+<script href="js/bootstrap.min.js"></script>

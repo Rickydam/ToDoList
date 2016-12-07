@@ -1,31 +1,33 @@
-// Express set up
+// express setup
 var express = require('express');
 var app = express();
-
-// Mongoose set up
-var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://heroku_11j5ndg9:41ipkd3dlc5fbpbpfc8pi3vpsq@ds113678.mlab.com:13678/heroku_11j5ndg9');
-mongoose.connection.once('connected', function() {
-  console.log("Connected to database: items.");
-});
-
-// Set up for the rest
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-
-// Run index.html
 app.use(express.static(__dirname));
 app.get("/", function(req, res) {
   res.render("index");
 });
+
+// mongoose setup
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://heroku_11j5ndg9:41ipkd3dlc5fbpbpfc8pi3vpsq@ds113678.mlab.com:13678/heroku_11j5ndg9');
+mongoose.connection.once('connected', function() {
+  console.log("Connected successfully to mLab database: heroku_11j5ndg9");
+});
+
+// morgan setup
+var morgan = require('morgan'); // log request details
 app.use(morgan('dev'));
+
+// bodyparser setup
+var bodyParser = require('body-parser'); // parse incoming request bodies
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
+
+// methodoverride setup
+var methodOverride = require('method-override'); // allow using delete
 app.use(methodOverride());
 
-// Define model
+// Define the todo model
 var Todo = mongoose.model('Todo', {
   text:String
 });
