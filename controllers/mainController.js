@@ -46,3 +46,9 @@ angular.module('controllers', [])
         });
     };
 }]);
+
+function checkEnter(e) {
+  if(e.keyCode==13) {
+    angular.element(document.getElementById("theDiv")).scope().createTodo();
+  }
+}
