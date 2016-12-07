@@ -81,3 +81,9 @@ app.delete('/items/:item_id', function(req, res) {
 var port = process.env.PORT || 8080;
 app.listen(port);
 console.log('App running');
+
+// Prevent the Heroku app from sleeping
+var http = require("http");
+setInterval(function() {
+  http.get("http://rickydam-todolist.herokuapp.com");
+}, 300000);
