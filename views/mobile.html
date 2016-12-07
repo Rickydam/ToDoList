@@ -3,13 +3,13 @@
 <link href="css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 <link href="css/custom.css" rel='stylesheet' type='text/css'>
 
-<div class="container-fluid" style="margin-left:50px;margin-top:50px" id="theDiv" onkeypress="checkEnter(event)">
+<div class="container-fluid" style="margin-left:40px;margin-top:60px" id="theDiv" onkeypress="checkEnter(event)">
   <font face="Source Sans Pro">
-    <div class="col-xs-8">
-      <input class="form-control" ng-model="formData.text" placeholder="Things to do" id="theTextField" style="height:60px">
+    <div class="col-xs-9">
+      <input class="form-control" ng-model="formData.text" placeholder="Things to do" id="theTextField" style="height:80px;margin-top:0px">
     </div>
-    <button class="btn btn-primary" ng-click="createTodo()" style="margin-left:-10px;height:60px;width:150px"><h1 style="margin-top:5px"> Submit <h1></button><br><br>
-    <h1 style="margin-left:15px;margin-bottom:40px;font-size:500%">
+    <button class="btn btn-primary" ng-click="createTodo()" style="margin-left:-10px;height:80px;width:150px"><h1 style="margin-top:15px"> Submit <h1></button><br><br>
+    <h1 style="margin-left:15px;margin-bottom:40px;font-size:580%">
       <b>
         ToDoList by
         <a href="https://github.com/Rickydam"> RickyDam
@@ -17,10 +17,10 @@
         </a>
       </b>
     </h1>
-    <h1 style="font-size:55px">
+    <h1 style="font-size:70px">
       <ul>
         <div ng-repeat="item in items" style="margin-top:10px;margin-left:-25px">
-          <button class="btn btn-danger" ng-click="deleteTodo(item._id)" style="height:50px;width:50px"><h1 style="margin-top:0px"> X </h1></button>
+          <button class="btn btn-danger" ng-click="deleteTodo(item._id)" style="height:60px;width:60px"><h1 style="margin-top:4px"> X </h1></button>
           <li> &nbsp; • {{item.text}} </li>
         </div>
       </ul>
