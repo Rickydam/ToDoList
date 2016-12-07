@@ -1,13 +1,5 @@
-input {
-    width: 400px;
-    padding: 0 20px;
-    font-size: 50px;
-}
-
-input,
 input::-webkit-input-placeholder {
     font-size: 50px;
-    line-height: 3;
 }
 
 .form-control {
