@@ -86,4 +86,4 @@ console.log('App running');
 var http = require("http");
 setInterval(function() {
   http.get("http://rickydam-todolist.herokuapp.com");
-}, 300000);
+}, 1500000); // Ping the website every 25 minutes
