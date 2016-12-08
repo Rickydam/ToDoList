@@ -1,7 +1,42 @@
-input::-webkit-input-placeholder {
-    font-size: 50px;
+#theDiv {
+  margin-left: 40px;
+  margin-top: 60px;
 }
 
-.form-control {
-  font-size: 50px;
+#theTextField {
+  font-size: 30px;
+  height: 70px;
+}
+
+#submitButton {
+  margin-left: 5px;
+  height: 70px;
+  width: 130px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#mainHeader {
+  margin-left: 15px;
+  margin-bottom: 40px;
+  font-size: 450%;
+}
+
+#listItems {
+  font-size: 40px;
+}
+
+#itemLine {
+  margin-top: 10px;
+  margin-left: -25px;
+}
+
+#theItem {
+  margin-left: 15px;
+}
+
+#deleteButton {
+  height: 60px;
+  width: 60px;
+  font-size: 30px;
 }
