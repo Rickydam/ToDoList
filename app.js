@@ -1,3 +1,6 @@
+// dotenv setup
+var dotenv = require('dotenv').config();
+
 // express setup
 var express = require('express');
 var app = express();
@@ -8,9 +11,9 @@ app.get("/", function(req, res) {
 
 // mongoose setup
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://heroku_11j5ndg9:41ipkd3dlc5fbpbpfc8pi3vpsq@ds113678.mlab.com:13678/heroku_11j5ndg9');
+var db = mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.once('connected', function() {
-  console.log("Connected successfully to mLab database: heroku_11j5ndg9");
+  console.log("Connected successfully to mLab database.");
 });
 
 // morgan setup
@@ -78,9 +81,9 @@ app.delete('/items/:item_id', function(req, res) {
 });
 
 // Pick a port and run app
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 app.listen(port);
-console.log('App running');
+console.log('App running on localhost:3000');
 
 // Prevent the Heroku app from sleeping
 var http = require("http");
